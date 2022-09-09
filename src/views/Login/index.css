@@ -1,0 +1,17 @@
+.login {
+    display: flex;
+    align-items: center;
+    justify-content : center;
+}
+
+.login-form{
+    display: flex;
+    align-items: center;
+    height: calc(100vh - 70px);
+    width : 30%;
+}
+
+.login-button{
+    margin-top : 10px;
+    text-align : end;
+}

@@ -1,0 +1,14 @@
+.title-user-list{
+    margin-top : 10px;
+}
+
+.list-user{
+    width: 90%;
+    margin : auto;
+}
+
+.list-user-principal{
+    display : flex;
+    justify-content: space-between;
+    align-items: center;
+}

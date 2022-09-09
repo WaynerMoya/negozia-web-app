@@ -1,8 +1,17 @@
+/* Importing the React library. */
 import React from 'react';
+
+/* Importing the client side of the react-dom library. */
 import ReactDOM from 'react-dom/client';
+
+/* Importing the index.css file. */
 import './index.css';
+
+/* Importing the App.js file. */
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+
+/* Importing the ant design css file. */
+import 'antd/dist/antd.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -10,8 +19,3 @@ root.render(
     <App />
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

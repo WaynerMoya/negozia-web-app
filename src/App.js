@@ -1,25 +1,44 @@
-import logo from './logo.svg';
+/* This is importing the useEffect and useState hooks from the React library. */
+import { useEffect, useState } from 'react';
+
+/* This is importing the Header and Footer components from the components folder. */
+import Header from './components/Header/Header'
+
+import Footer from './components/Footer/Footer';
+
+/* This is importing the Login and Dashboard components from the views folder. */
+import Login from './views/Login';
+
+import Dashboard from './views/Dashboard'
+
+/* This is importing the App.css file into the App.js file. */
 import './App.css';
 
-function App() {
+const App = () => {
+
+  /* this function will be control if the use is auth or not */
+  const [isAuth, setIsAuth] = useState(false)
+
+  /* verify is in the local storage exist the variable is Auth */
+  const verifyAuth = () => {
+    setIsAuth(localStorage.getItem('isAuth') ? true : false)
+  }
+
+  /* in the first render call the function verifyAuth */
+  useEffect(() => {
+    verifyAuth()
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+      <Header isAuth={isAuth} verifyAuth={verifyAuth} />
+
+      {isAuth ? <Dashboard /> : <Login verifyAuth={verifyAuth} />}
+
+      <Footer />
     </div>
-  );
+  )
 }
 
+/* Exporting the App component. */
 export default App;
